@@ -9,4 +9,4 @@ explicar como contribuir, etc
 <p align="center">
   :construction: Proyecto en constante edicion :construction:
 </p>
-![Logo-GitHub](https://github.com/adridsz/DWES/assets/145338672/8ae1b9f7-5cb5-417d-b51a-c44d306e715c)
+![GitHub-Logo](https://github.com/adridsz/DWES/assets/145338672/8ae1b9f7-5cb5-417d-b51a-c44d306e715c)
