@@ -1,6 +1,8 @@
 <p align="center">
 <a href="https://github.com/badges/shields/pulse" alt="Activity">
         <img src="https://img.shields.io/github/commit-activity/w/adridsz/DWES" /></a>
+<img srt="https://img.shields.io/github/stars/:user" />
+
 </p>
 <h1 align="center"> # Este es un archivo readme </h1>
 Se usa para describir el contenido del repositorio, contar como sacar provecho al trabajo, 
