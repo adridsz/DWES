@@ -1,1 +1,22 @@
+Ejercicio 3
+git status > mira el estado del repositorio
+nano indice.txt > abro el editor de texto y nos crea automaticamente el archivo indice.txt al no existir
+dentro de este introduzco el texto y luego hago control x y le doy a enter para guardarlo
+git add indice.txt > sirve para añadir un cambio en el directorio a nuestra zona de intercambio
+![ej31](https://i.imgur.com/VVqF3IH.png)
+![ej32](https://i.imgur.com/FGXlKIF.png)
 
+Ejercicio 4
+git commit -m “Añadido índice del libro.” > Con este comando hago como una captura de los cambios que se van a realizar
+git status > Miramos el estado del repositorio
+![ej4](https://i.imgur.com/Vb9Jdt8.png)
+
+Ejercicio 5
+nano indice.txt > abre el editor de textos para editar el indice.txt
+git diff > Con esto vemos la diferencia de los respecto al ultimo commit
+![ej51](https://i.imgur.com/FfTApIN.png)
+![ej52](https://i.imgur.com/9lNiJPG.png)
+
+Ejercicio 6
+git show > nos permite ver los cambios respecto al ultimo commit (Parecido a git diff)
+![ej6](https://i.imgur.com/CmmGOso.png)
