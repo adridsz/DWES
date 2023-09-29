@@ -9,7 +9,7 @@ while True:
         print("3- Multpicplicacion")
         print("4- Division")
         opcion=int(input("¿Que deseas hacer? "))
-        if opcion==1 or opcion==2 or opcion==3 or opcion==4:
+        if opcion in {1, 2, 3, 4}:
             break
     if opcion==1:
         print(suma(num, num2))
@@ -21,7 +21,8 @@ while True:
         print(division(num, num2))
     while True:
         opcion=input("¿Deseas realizar otra operación? (S/N) ").lower()
-        if opcion=="s" or opcion=="n":
+        if opcion in ["s", "n"]:
             break
     if opcion=="n":
         break
+    
