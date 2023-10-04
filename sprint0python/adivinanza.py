@@ -1,7 +1,7 @@
 import random
 
 
-p = 0
+puntos = 0
 v = 0
 a = {
     1: "La A, anda. La B, besa. La C, reza. ¿Qué fruta es esa? (A- Pera  B- Cereza  C- Manzana)",
@@ -14,18 +14,33 @@ while True:
     adivinanza = random.sample(ca, 1) [0]
     ca.remove(adivinanza)
     
-    print(ca[adivinanza])
-    respuesta=input()
+    print(a[adivinanza])
+    while True:
+        respuesta = input("Introduce la respuesta(A,B o C): ").lower()
+        if respuesta in ["a", "b", "c"]:
+            break
     v+=1
-    if v==3:
+    if adivinanza==1:
+        if respuesta=="b":
+            print("La respuesta es correcta")
+            puntos+=10
+        else:
+            print("Respuesta incorrecta")
+            puntos-=5
+    elif adivinanza==2:
+        if respuesta=="a":
+            print("La respuesta es correcta")
+            puntos+=10
+        else:
+            print("Respuesta incorrecta")
+            puntos-=5
+    elif adivinanza==3:
+        if respuesta=="c":
+            print("La respuesta es correcta")
+            puntos+=10
+        else:
+            print("Respuesta incorrecta")
+            puntos-=5
+    if v==2:
         break
-
-while True:
-    respuesta = input("Introduce la respuesta(A,B o C):" ).lower()
-    if respuesta in ["a", "b", "c"]:
-        break
-
-else:
-    print("Respuesta incorrecta")
-    puntos-=5
-print("Obtuviste ",puntos," de 30 posibles")
+print("Obtuviste ",puntos," de 20 posibles")
