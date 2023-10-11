@@ -1,7 +1,8 @@
-from PIL import ImageTk
+from PIL import ImageTk, Image
 
 class Cell:
     def __init__(self,title,path):
         self.title = title
         self.path = path
-        self.image_tk = ImageTk.PhotoImage(file=self.path)
+        rescalada = (Image.open(self.path)).resize((100, 100), Image.Resampling.LANCZOS)
+        self.imageTk = ImageTk.PhotoImage(rescalada)
