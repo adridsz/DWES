@@ -1,0 +1,33 @@
+[
+
+  {
+    "name": "Paisaje 1",
+    "description": "Esta es una foto del eje cafetero de Colombia, esto es una región la cual cuenta con pueblos coloridos y estos sobreviven a base del comercio del cafe" ,
+    "image_url": "https://raw.githubusercontent.com/adridsz/DWES/main/recursos/1.jpg"
+  },
+
+  {
+    "name": "Paisaje 2",
+    "description": "Esto es una foto del cabo de San Juan, esto se encuentra dentro del parque nacional de Tayrona. Aqui aun subsisten pueblos indigenas a pesar de ser una zona tan bonita para el turismo" ,
+    "image_url": "https://raw.githubusercontent.com/adridsz/DWES/main/recursos/2.jpg"
+  },
+
+{
+    "name": "Paisaje 3",
+    "description": "Esta es otra foto del eje cafetero de Colombia, esto es una región la cual cuenta con pueblos coloridos y estos sobreviven a base del comercio del cafe" ,
+    "image_url": "https://raw.githubusercontent.com/adridsz/DWES/main/recursos/3.jpg"
+  },
+
+{
+    "name": "Paisaje 4",
+    "description": "Esta es una foto del eje cafetero de Colombia, esto es una región la cual cuenta con pueblos coloridos y estos sobreviven a base del comercio del cafe" ,
+    "image_url": "https://raw.githubusercontent.com/adridsz/DWES/main/recursos/4.jpg"
+  },
+
+{
+    "name": "Paisaje 5",
+    "description": "Esta es una foto de Cartajena de Indias, es un distrito cultural y turistico. Es patrimonio nacional y de la Humanidad" ,
+    "image_url": "https://raw.githubusercontent.com/adridsz/DWES/main/recursos/5.jpg"
+  },
+
+]
