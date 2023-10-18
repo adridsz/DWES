@@ -2,6 +2,7 @@ import threading
 import requests
 import tkinter as tk
 from window import MainWindow
+from tkinter import messagebox
 
 class loadingWindow:
     
@@ -62,8 +63,19 @@ class loadingWindow:
 
 def launch_main_window(json_data): # Aqui lanzamos la ventana main
     root = tk.Tk()
+    barra_menu =tk.Menu() # Aqui creamos el menu de ayuda
+    menu_ayuda = tk.Menu(barra_menu, tearoff=False)
+    menu_ayuda.add_command( # Aqui cremos el desplegable de acerca de
+        label="Acerca de",
+        command=acerca_de
+    )
+    barra_menu.add_cascade(menu=menu_ayuda, label="Ayuda")
+    root.config(menu=barra_menu)
     x = (root.winfo_screenwidth() - root.winfo_reqwidth()) /2 # Aqui centramos la imagern
     y = (root.winfo_screenheight() - root.winfo_reqheight()) /2
     root.geometry(f"+{int(x)}+{int(y)}") # Aqui terminamos de centrarla
     app = MainWindow(root, json_data) #Aqui lanzamos la ventana principal
     root.mainloop()
+    
+def acerca_de():
+    messagebox.showinfo(message="Acerca del desarrollador", title="Acerca de")

@@ -9,4 +9,4 @@ if __name__ == "__main__": # Aqui arrancamos la pantalla de carga
     y = (root.winfo_screenheight() - root.winfo_reqheight()) /2
     root.geometry(f"+{int(x)}+{int(y)}") # Aqui terminamos de centrarla
     app = loadingWindow(root)
-    root.mainloop() 
+    root.mainloop()     
