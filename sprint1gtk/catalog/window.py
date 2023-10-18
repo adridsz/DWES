@@ -1,26 +1,23 @@
+import threading
+import requests
+from PIL import Image, ImageTk
+from io import BytesIO
 from tkinter import Tk, ttk, messagebox
 import tkinter as tk
 from cell import Cell
 from detail_window import mostrar_detalles
 
+def load_image_from_url(self, url): # Aqui hacemos la petición para descargar la imagen
+    response = requests.get(url)
+    img_data = Image.open(BytesIO(response.content))
+    return ImageTk.PhotoImage(img_data)
+
 class MainWindow():
     
-    def __init__(self, root):
+    def __init__(self, root, json_data):
         #Titulo ventana
-        root.title("MainWindow")
+        root.title("MainWindow") # Le damos el titulo a la ventana principal
         
-        
-        #Aqui defino las imagenes
-        self.cells = [
-            Cell("Paisaje 1", "C:\\msys64\\home\\Alumno\\DWES\\sprint1gtk\\catalog\\data\\unedited\\1.jpg", "Esta es una foto del eje cafetero de Colombia, esto es una región la cual cuenta con pueblos coloridos y estos sobreviven a base del comercio del cafe"),
-            Cell("Paisaje 2", "C:\\msys64\\home\\Alumno\\DWES\\sprint1gtk\\catalog\\data\\unedited\\2.jpg", "Esto es una foto del cabo de San Juan, esto se encuentra dentro del parque nacional de Tayrona. Aqui aun subsisten pueblos indigenas a pesar de ser una zona tan bonita para el turismo"),
-            Cell("Paisaje 3", "C:\\msys64\\home\\Alumno\\DWES\\sprint1gtk\\catalog\\data\\unedited\\3.jpg", "Esta es otra foto del eje cafetero de Colombia, esto es una región la cual cuenta con pueblos coloridos y estos sobreviven a base del comercio del cafe"),
-            Cell("Paisaje 4", "C:\\msys64\\home\\Alumno\\DWES\\sprint1gtk\\catalog\\data\\unedited\\4.jpg", "Esta es una foto del eje cafetero de Colombia, esto es una región la cual cuenta con pueblos coloridos y estos sobreviven a base del comercio del cafe"),
-            Cell("Paisaje 5", "C:\\msys64\\home\\Alumno\\DWES\\sprint1gtk\\catalog\\data\\unedited\\5.jpg", "Esta es una foto de Cartajena de Indias, es un distrito cultural y turistico. Es patrimonio nacional y de la Humanidad")
-        ]
-        
-        #Bucle para ver las imagenes
-        for i, cell in enumerate(self.cells):
-            label = ttk.Label(root, image= cell.imageTk, text= cell.title, compound=tk.BOTTOM)
-            label.grid(row=i, column=0)
-            label.bind("<Button-1>", lambda event, celda= cell: mostrar_detalles(celda))
+        for paisaje in json_data: # Bucle para cargar las imagenes
+            label = ttk.Label(root, image= load_image_from_url(paisaje.get("image_url")), text= paisaje.get("description"))
+            label.grid(row=paisaje, column=0)
