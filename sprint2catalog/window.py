@@ -1,26 +1,26 @@
+import threading
+import requests
+from PIL import Image, ImageTk
 from tkinter import Tk, ttk, messagebox
 import tkinter as tk
 from cell import Cell
 from detail_window import mostrar_detalles
 
 class MainWindow():
-    
-    def __init__(self, root):
+    cells = [] # Aqui creamos una lista que rellenaremos con los datos del json
+    def __init__(self, root, json_data):
         #Titulo ventana
-        root.title("MainWindow")
+        root.title("MainWindow") # Le damos el titulo a la ventana principal
         
-        
-        #Aqui defino las imagenes
-        self.cells = [
-            Cell("Paisaje 1", "C:\\msys64\\home\\Alumno\\DWES\\sprint1gtk\\catalog\\data\\unedited\\1.jpg", "Esta es una foto del eje cafetero de Colombia, esto es una región la cual cuenta con pueblos coloridos y estos sobreviven a base del comercio del cafe"),
-            Cell("Paisaje 2", "C:\\msys64\\home\\Alumno\\DWES\\sprint1gtk\\catalog\\data\\unedited\\2.jpg", "Esto es una foto del cabo de San Juan, esto se encuentra dentro del parque nacional de Tayrona. Aqui aun subsisten pueblos indigenas a pesar de ser una zona tan bonita para el turismo"),
-            Cell("Paisaje 3", "C:\\msys64\\home\\Alumno\\DWES\\sprint1gtk\\catalog\\data\\unedited\\3.jpg", "Esta es otra foto del eje cafetero de Colombia, esto es una región la cual cuenta con pueblos coloridos y estos sobreviven a base del comercio del cafe"),
-            Cell("Paisaje 4", "C:\\msys64\\home\\Alumno\\DWES\\sprint1gtk\\catalog\\data\\unedited\\4.jpg", "Esta es una foto del eje cafetero de Colombia, esto es una región la cual cuenta con pueblos coloridos y estos sobreviven a base del comercio del cafe"),
-            Cell("Paisaje 5", "C:\\msys64\\home\\Alumno\\DWES\\sprint1gtk\\catalog\\data\\unedited\\5.jpg", "Esta es una foto de Cartajena de Indias, es un distrito cultural y turistico. Es patrimonio nacional y de la Humanidad")
-        ]
+        for paisaje in json_data: # Con este bucle metemos los datos del json en la lista cells
+            nombre = paisaje.get("name")
+            descripcion = paisaje.get("description")
+            url = paisaje.get("image_url")
+            cell = Cell(nombre, url, descripcion)
+            self.cells.append(cell)
         
         #Bucle para ver las imagenes
         for i, cell in enumerate(self.cells):
-            label = ttk.Label(root, image= cell.imageTk, text= cell.title, compound=tk.BOTTOM)
+            label = ttk.Label(root, image= cell.image_tk, text= cell.nombre, compound=tk.BOTTOM)
             label.grid(row=i, column=0)
             label.bind("<Button-1>", lambda event, celda= cell: mostrar_detalles(celda))
