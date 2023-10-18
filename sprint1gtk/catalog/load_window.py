@@ -4,7 +4,10 @@ import tkinter as tk
 from window import MainWindow
 
 class loadingWindow:
+    
     def __init__(self, root):
+        self.finished = False
+        self.json_data = []
         self.root = root;
         self.root.title("CARGANDO...") # Aqui le damos el titulo a la ventana de carga
         self.root.geometry("170x120") # Aqui le damos el tamaño a la ventana de carga
@@ -26,6 +29,8 @@ class loadingWindow:
 
         self.thread = threading.Thread(target=self.fetch_json_data)
         self.thread.start()
+        if self.thread.is_alive():
+            self.check_thread()
 
     def draw_progress_circle(self, progress): # Aqui mostramos el circulo de carga
         self.canvas.delete("progress")
