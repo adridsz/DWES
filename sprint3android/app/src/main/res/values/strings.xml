@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">My Catalog</string>
+    <string name="app_name">Catalogo</string>
+    <string name="Catalogo_actividad">Catalogo de la actividad</string>
+    <string name="Sobre_la_actividad">Sobre la actividad</string>
+    <string name="navigation_drawer_open">Mostrar menu</string>
+    <string name="navigation_drawer_close">Cerrar menu</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
