@@ -51,7 +51,7 @@ public class HomeActivity extends AppCompatActivity {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() { // Aqui creamos el menu que muestra las opiones
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                // Aqui hacemos que al clickar a cierto item muestre un fragment
+                // Aqui hacemos que al cl   ickar a cierto item muestre un fragment
                 Fragment fragment = null;
                 if (item.getItemId() == R.id.catalogo) {
                     // Mostramos el CatalogFragment
