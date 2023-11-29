@@ -1,6 +1,8 @@
 package com.example.myothercatalog;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +20,18 @@ public class RecycleViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         textView = (TextView) itemView.findViewById(R.id.vista_texto);
         imageView = (ImageView) itemView.findViewById(R.id.vista_imagen);
+
+        //Aqui hacemos que detecte si clickan en la imagen y nos lleve a la activity de detalle
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            // Aqui decimos que cuando clicken haga algo
+            public void onClick(View v) {
+                Context context = v.getContext();
+                // Aqui le decimos que nos lleve a la DetailActivity
+                Intent intent = new Intent(context, DetailActivity.class);
+                context.startActivity(intent);
+            }
+        });
     }
 
     //metodo que muestra la informacion en la celda
