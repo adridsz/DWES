@@ -4,6 +4,12 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
+    
+    <style name="TemaModificado" parent="Theme.AppCompat.Light">
+        <item name="android:textStyle">italic</item>
+        <item name="android:background">#19415F</item>
+        <item name="android:textColor">#D1E872</item>
+    </style>
 
-    <style name="Theme.MyOtherCatalog" parent="Base.Theme.MyOtherCatalog" />
+    <style name="Theme.MyOtherCatalog" parent="Base.Theme.MyOtherCatalog"/>
 </resources>
