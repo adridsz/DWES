@@ -17,6 +17,7 @@
         android:id="@+id/vista_texto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        style="@style/Titulos"
         app:layout_constraintTop_toTopOf="@id/vista_imagen"
         app:layout_constraintBottom_toBottomOf="@id/vista_imagen"
         app:layout_constraintStart_toEndOf="@id/vista_imagen"
